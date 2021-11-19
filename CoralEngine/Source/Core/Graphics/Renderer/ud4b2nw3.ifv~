@@ -1,0 +1,21 @@
+#ifndef RENDERER_H
+#define RENDERER_H
+
+#include "defines.h"
+
+class Renderer
+{
+public:
+	static Renderer& Get() noexcept;
+
+	static void Clear() noexcept;
+	static void ClearColor(float r, float g, float b, float a) noexcept;
+
+private:
+	Renderer() = default;
+	Renderer(const Renderer&) = delete;
+private:
+	static Renderer s_Instance;
+};
+
+#endif // !RENDERER_H
