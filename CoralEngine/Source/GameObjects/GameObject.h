@@ -31,7 +31,7 @@ private:
 };
 
 template<typename T>
-inline T* AGameObject::AddComponent()
+T* AGameObject::AddComponent()
 {
 	std::string key = typeid(T).name();
 
@@ -42,7 +42,7 @@ inline T* AGameObject::AddComponent()
 }
 
 template<typename T>
-inline bool AGameObject::HasComponent()
+bool AGameObject::HasComponent()
 {
 	std::string key = typeid(T).name();
 
@@ -53,7 +53,7 @@ inline bool AGameObject::HasComponent()
 }
 
 template<typename T>
-inline T* AGameObject::GetComponent()
+T* AGameObject::GetComponent()
 {
 	std::string key = typeid(T).name();
 

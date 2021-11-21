@@ -54,14 +54,15 @@ void Renderer::DrawObject(AGameObject* object) noexcept
         return;
 
     Sprite* sprite = object->GetComponent<Sprite>();
-    sprite->Bind();
 
-   /* if (object->HasComponent<Transform>())
+    if (object->HasComponent<Transform>())
     {
         sprite->GetShaderProgram()->SetUniformMatrix("u_Model", object->GetComponent<Transform>()->GetTransform());
         sprite->GetShaderProgram()->SetUniformMatrix("u_View", s_Instance.m_Camera->GetComponent<Transform>()->GetTransform());
         sprite->GetShaderProgram()->SetUniformMatrix("u_Projection", s_Instance.m_Projection);
-    }*/
+    }
+
+    sprite->Bind();
 
     glDrawArrays(GL_TRIANGLES, 0, 6);
 }

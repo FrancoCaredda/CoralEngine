@@ -4,23 +4,25 @@ Sprite::Sprite(AGameObject* owner, ShaderProgram* shader)
 {
 	if (shader != nullptr)
 		m_Program = shader;
+	else
+		m_Program = nullptr;
 
 	m_VertexBuffer = new VertexBufferObject(GL_ARRAY_BUFFER, GL_STATIC_DRAW);
 	m_VertexBuffer->Bind();
 
 	m_VertexBuffer->SendData({
-		-0.5f, -0.5f,
-		-0.5f, 0.5f,
-		 0.5f, -0.5f,
-		 0.5f, -0.5f,
-		-0.5f, 0.5f,
-		 0.5f, 0.5f
-		//50.0f, 50.0f,
-		//50.0f, 100.0f,
-		//100.0f, 50.0f,
-		//100.0f, 50.0f,
-		//50.0f, 100.0f,
-		//100.0f, 100.0f
+		//-0.5f, -0.5f,
+		//-0.5f, 0.5f,
+		// 0.5f, -0.5f,
+		// 0.5f, -0.5f,
+		//-0.5f, 0.5f,
+		// 0.5f, 0.5f
+		50.0f, 50.0f,
+		50.0f, 100.0f,
+		100.0f, 50.0f,
+		100.0f, 50.0f,
+		50.0f, 100.0f,
+		100.0f, 100.0f
 	});
 	
 	m_VertexBuffer->Unbind();

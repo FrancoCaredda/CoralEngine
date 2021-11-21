@@ -5,8 +5,6 @@
 #include "GameObjects/GameObject.h"
 #include "GameObjects/Camera.h"
 
-#include "Components/Transform.h"
-
 class MyGameObject : public AGameObject
 {
 public:
@@ -20,6 +18,5 @@ public:
 private:
 	ShaderProgram* m_Program;
 	Transform* m_Transform;
-	float m_Speed = 0.05;
 };
 

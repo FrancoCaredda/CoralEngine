@@ -21,13 +21,19 @@ void MyGameObject::Start()
 	m_Program->Link();
 
 	Sprite* sprite = AddComponent<Sprite>();
-	Transform* transform = AddComponent<Transform>();
+	m_Transform = AddComponent<Transform>();
 
 	sprite->SetShaderProgram(m_Program);
 }
 
 void MyGameObject::Update(float deltaTime)
 {
+	m_Transform->Translate(glm::vec3(m_Speed * deltaTime, 0.0f, 0.0f));
+	//glm::vec3 position = m_Transform->GetPosition();
+
+
+	//if (position.x <= 0 || position.x >= 600)
+		//m_Speed *= -1;
 }
 
 MyGameObject::~MyGameObject()

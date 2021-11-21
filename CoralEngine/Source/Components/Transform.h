@@ -18,6 +18,8 @@ public:
 	void Scale(const glm::vec3& size);
 
 	inline glm::mat4 GetTransform() { return m_Transform; }
+	inline glm::vec3 GetPosition() { return m_Position; }
+
 	inline AGameObject* GetOwner() { return m_Owner; }
 private:
 	glm::vec3 m_Position;
