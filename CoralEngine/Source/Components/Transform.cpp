@@ -11,9 +11,9 @@ Transform::Transform(AGameObject* owner)
 
 void Transform::Translate(const glm::vec3& position)
 {
-	m_Position = position;
+	m_Position += position;
 
-	m_Transform = glm::translate(m_Transform, m_Position);
+	m_Transform = glm::translate(m_Transform, position);
 }
 
 void Transform::Rotate(const glm::vec3& rotation, float angle)

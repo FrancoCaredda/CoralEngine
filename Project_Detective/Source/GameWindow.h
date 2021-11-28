@@ -23,6 +23,7 @@ public:
 private:
 	Camera* m_Camera;
 	MyGameObject* m_Object;
+	MyGameObject* m_Object2;
 };
 
 #endif // !GAME_WINDOW_H

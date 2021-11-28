@@ -1,8 +1,10 @@
 #include "GameObject.h"
+#include <Components/Transform.h>
 
 AGameObject::AGameObject(const std::string& name)
 	: m_Name(name)
 {
+	Transform * pos = AddComponent<Transform>();
 }
 
 AGameObject::~AGameObject()
