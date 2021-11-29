@@ -1,0 +1,26 @@
+#include "MyGameObject.h"
+
+#include "Components/Sprite.h"
+#include "Components/Transform.h"
+
+void MyGameObject::Start()
+{
+	Sprite* sprite = AddComponent<Sprite>();
+	m_Transform = AddComponent<Transform>();
+
+	//sprite->SetColor({ 1.0f, 0.498f, 0.313f, 1.0f });
+
+	m_Transform->Translate(glm::vec3(600 / 2 - 150, 480 / 2 - 150, 0));
+	m_Transform->Scale(glm::vec3(2, 2, 0));
+}
+
+void MyGameObject::Update(float deltaTime)
+{
+	//m_Transform->Rotate(glm::vec3(0.0, 0.0, 1.0), m_Speed);
+	m_Transform->Translate(glm::vec3(1.0, 0.0, 0.0));
+}
+
+MyGameObject::~MyGameObject()
+{
+	//delete m_Program;
+}

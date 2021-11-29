@@ -1,10 +1,9 @@
 #pragma once
 
-#include "Core/ShaderProgram.h"
-
 #include "GameObjects/GameObject.h"
 #include "GameObjects/Camera.h"
 
+#include "Components/Sprite.h"
 #include "Components/Transform.h"
 
 class MyGameObject : public AGameObject
@@ -18,8 +17,8 @@ public:
 
 	virtual ~MyGameObject() override;
 private:
-	ShaderProgram* m_Program;
 	Transform* m_Transform;
-	float m_Speed = 0.05;
+	Sprite* m_Sprite;
+	float m_Speed = 1000;
 };
 

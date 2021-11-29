@@ -21,6 +21,8 @@ void GameWindow::Start()
 void GameWindow::Update(float deltaTime)
 {
 	m_Object->Update(deltaTime);
+	std::cout << deltaTime << std::endl;
+
 	Renderer::DrawObject(m_Object);
 }
 

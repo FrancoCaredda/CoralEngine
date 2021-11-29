@@ -1,42 +1,24 @@
 #include "MyGameObject.h"
 
-#include "Components/Sprite.h"
-#include "Components/Transform.h"
-
 void MyGameObject::Start()
 {
-	Shader fragmentShader(GL_FRAGMENT_SHADER);
-	Shader vertexShader(GL_VERTEX_SHADER);
-
-	fragmentShader.Load("Assets/Shaders/Rectangle.frag.glsl");
-	vertexShader.Load("Assets/Shaders/Rectangle.vert.glsl");
-
-	fragmentShader.Compile();
-	vertexShader.Compile();
-
-	m_Program = new ShaderProgram();
-	m_Program->AttachShader(fragmentShader);
-	m_Program->AttachShader(vertexShader);
-
-	m_Program->Link();
-
-	Sprite* sprite = AddComponent<Sprite>();
+	m_Sprite = AddComponent<Sprite>();
 	m_Transform = AddComponent<Transform>();
 
-	sprite->SetShaderProgram(m_Program);
+//	sprite->SetColor(glm::vec4(1.0f, 0.498f, 0.313f, 1.0f));
+
+
+	m_Transform->Translate(glm::vec3(600 / 2 - 150, 480 / 2 - 150, 0));
+	m_Transform->Scale(glm::vec3(2, 2, 0));
+	m_Speed = 20;
 }
 
 void MyGameObject::Update(float deltaTime)
 {
-	m_Transform->Translate(glm::vec3(m_Speed * deltaTime, 0.0f, 0.0f));
-	//glm::vec3 position = m_Transform->GetPosition();
-
-
-	//if (position.x <= 0 || position.x >= 600)
-		//m_Speed *= -1;
+	m_Sprite->SetColor(glm::vec4(glm::sin(m_Speed * deltaTime), glm::cos(m_Speed * deltaTime), glm::sin(m_Speed * deltaTime), 1.0f));
 }
 
 MyGameObject::~MyGameObject()
 {
-	delete m_Program;
+	//delete m_Program;
 }

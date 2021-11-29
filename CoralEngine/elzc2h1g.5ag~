@@ -1,0 +1,43 @@
+#include "Shader.h"
+
+Shader::Shader()
+{
+	m_Id = glCreateProgram();
+	
+	uint32_t vertexShader = glCreateShader(GL_VERTEX_SHADER);
+	uint32_t fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
+
+	const char* vertexSource = CORAL_STD_VERTEX_SHADER;
+	const char* fragmentSource = CORAL_STD_FRAGMENT_SHADER;
+
+	glShaderSource(vertexShader, 1, &vertexSource, nullptr);
+	glShaderSource(fragmentShader, 1, &fragmentSource, nullptr);
+
+	glCompileShader(vertexShader);
+	glCompileShader(fragmentShader);
+
+	ShaderInfoLog(vertexShader);
+	ShaderInfoLog(fragmentShader);
+
+	glAttachShader(m_Id, vertexShader);
+	glAttachShader(m_Id, fragmentShader);
+
+	glLinkProgram(m_Id);
+}
+
+void Shader::ShaderInfoLog(uint32_t shaderId)
+{
+	char Buffer[BUFFER_SIZE];
+	int status;
+	glGetShaderiv(shaderId, GL_COMPILE_STATUS, &status);
+
+	if (status == GL_FALSE)
+	{
+		glGetShaderInfoLog(shaderId, BUFFER_SIZE, nullptr, Buffer);
+		std::cerr << Buffer << std::endl;
+	}
+	else 
+	{
+		std::cout << "Shader compilation complete!" << std::endl;
+	}
+}

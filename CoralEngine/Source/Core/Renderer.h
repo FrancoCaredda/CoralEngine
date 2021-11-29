@@ -10,7 +10,6 @@
 #include "Core/VertexBufferObject.h"
 
 #include "Core/Shader.h"
-#include "Core/ShaderProgram.h"
 
 #include "Components/Sprite.h"
 
@@ -22,6 +21,8 @@
 class CORAL_API Renderer
 {
 public:
+	static void Init() noexcept;
+
 	static Renderer& Get() noexcept;
 
 	static void Clear() noexcept;
@@ -33,11 +34,10 @@ public:
 	static void DrawSpriteArrays() noexcept;
 	static void DrawSpriteIndecies() noexcept;
 
-	static void Init() noexcept;
-
 	static void SetCurrentCamera(Camera* camera) noexcept;
 	static void DrawObject(AGameObject* object) noexcept;
 
+	static void Shutdown() noexcept;
 private:
 	Renderer() = default;
 	Renderer(const Renderer&) = delete;

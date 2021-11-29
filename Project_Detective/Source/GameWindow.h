@@ -7,7 +7,6 @@
 
 #include "Core/Shader.h"
 #include "GameObjects/Camera.h"
-#include "Core/ShaderProgram.h"
 
 #include "MyGameObject.h"
 
