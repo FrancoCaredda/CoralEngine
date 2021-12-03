@@ -55,7 +55,12 @@ void Renderer::DrawObject(AGameObject* object) noexcept
 
     Sprite* sprite = object->GetComponent<Sprite>();
 
+    sprite->Bind();
+
     sprite->m_Shader->SetUniformVector("u_Color", sprite->m_Color);
+
+    if (sprite->m_Texture != nullptr)
+        sprite->m_Shader->SetUniformImage("u_Texture",  sprite->m_Texture->GetSlot());
 
     if (object->HasComponent<Transform>())
     {
@@ -64,9 +69,8 @@ void Renderer::DrawObject(AGameObject* object) noexcept
         sprite->m_Shader->SetUniformMatrix("u_Projection", s_Instance.m_Projection);
     }
 
-    sprite->Bind();
 
-    glDrawArrays(GL_TRIANGLES, 0, 6);
+    glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 }
 
 void Renderer::Shutdown() noexcept

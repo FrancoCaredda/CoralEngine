@@ -88,7 +88,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>CORAL_ENGINE_EXPORT;GLEW_STATIC;_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)CoralEngine\vendor\GLEW\include;$(SolutionDir)CoralEngine\vendor\GLFW\include\GLFW;$(SolutionDir)CoralEngine\Source;$(SolutionDir)CoralEngine\vendor\glm-master;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)CoralEngine\vendor\GLEW\include;$(SolutionDir)CoralEngine\vendor\GLFW\include\GLFW;$(SolutionDir)CoralEngine\Source;$(SolutionDir)CoralEngine\vendor\glm-master;$(SolutionDir)CoralEngine\vendor\stb-master\deprecated;$(SolutionDir)CoralEngine\vendor\stb-master;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -105,7 +105,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>CORAL_ENGINE_EXPORT;GLEW_STATIC;_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)CoralEngine\vendor\GLEW\include;$(SolutionDir)CoralEngine\vendor\GLFW\include\GLFW;$(SolutionDir)CoralEngine\Source;$(SolutionDir)CoralEngine\vendor\glm-master;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)CoralEngine\vendor\GLEW\include;$(SolutionDir)CoralEngine\vendor\GLFW\include\GLFW;$(SolutionDir)CoralEngine\Source;$(SolutionDir)CoralEngine\vendor\glm-master;$(SolutionDir)CoralEngine\vendor\stb-master\deprecated;$(SolutionDir)CoralEngine\vendor\stb-master;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -122,7 +122,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>CORAL_ENGINE_EXPORT;GLEW_STATIC;_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)CoralEngine\vendor\GLEW\include;$(SolutionDir)CoralEngine\vendor\GLFW\include\GLFW;$(SolutionDir)CoralEngine\Source;$(SolutionDir)CoralEngine\vendor\glm-master;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)CoralEngine\vendor\GLEW\include;$(SolutionDir)CoralEngine\vendor\GLFW\include\GLFW;$(SolutionDir)CoralEngine\Source;$(SolutionDir)CoralEngine\vendor\glm-master;$(SolutionDir)CoralEngine\vendor\stb-master\deprecated;$(SolutionDir)CoralEngine\vendor\stb-master;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -139,7 +139,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>CORAL_ENGINE_EXPORT;GLEW_STATIC;_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)CoralEngine\vendor\GLEW\include;$(SolutionDir)CoralEngine\vendor\GLFW\include\GLFW;$(SolutionDir)CoralEngine\Source;$(SolutionDir)CoralEngine\vendor\glm-master;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)CoralEngine\vendor\GLEW\include;$(SolutionDir)CoralEngine\vendor\GLFW\include\GLFW;$(SolutionDir)CoralEngine\Source;$(SolutionDir)CoralEngine\vendor\glm-master;$(SolutionDir)CoralEngine\vendor\stb-master\deprecated;$(SolutionDir)CoralEngine\vendor\stb-master;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -998,6 +998,7 @@
     <None Include="vendor\glm-master\glm\gtx\wrap.inl" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\Core\IndexBufferObject.h" />
     <ClInclude Include="Source\Core\Shader.h" />
     <ClInclude Include="Source\GameObjects\Camera.h" />
     <ClInclude Include="Source\GameObjects\GameObject.h" />
@@ -1009,6 +1010,7 @@
     <ClInclude Include="Source\Core\AWindow.h" />
     <ClInclude Include="Source\Components\Sprite.h" />
     <ClInclude Include="Source\Components\Transform.h" />
+    <ClInclude Include="Source\Core\Texture.h" />
     <ClInclude Include="vendor\GLEW\include\GL\eglew.h" />
     <ClInclude Include="vendor\GLEW\include\GL\glew.h" />
     <ClInclude Include="vendor\GLEW\include\GL\glxew.h" />
@@ -1302,8 +1304,10 @@
     <ClInclude Include="vendor\glm-master\glm\vec3.hpp" />
     <ClInclude Include="vendor\glm-master\glm\vec4.hpp" />
     <ClInclude Include="vendor\glm-master\glm\vector_relational.hpp" />
+    <ClInclude Include="vendor\stb-master\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Core\IndexBufferObject.cpp" />
     <ClCompile Include="Source\Core\Shader.cpp" />
     <ClCompile Include="Source\GameObjects\Camera.cpp" />
     <ClCompile Include="Source\GameObjects\GameObject.cpp" />
@@ -1314,6 +1318,8 @@
     <ClCompile Include="Source\Core\VertexArrayObject.cpp" />
     <ClCompile Include="Source\Components\Sprite.cpp" />
     <ClCompile Include="Source\Components\Transform.cpp" />
+    <ClCompile Include="Source\Core\Texture.cpp" />
+    <ClCompile Include="vendor\stb-master\stbi_realization.cpp" />
     <ClCompile Include="vendor\glm-master\glm\detail\glm.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

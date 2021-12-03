@@ -112,8 +112,23 @@ void Shader::SetUniformMatrix(const std::string& name, const glm::mat4& matrix)
 	glUniformMatrix4fv(m_Uniforms[name], 1, GL_FALSE, glm::value_ptr(matrix));
 }
 
+void Shader::SetUniformImage(const std::string& name, int slot)
+{
+	if (m_Uniforms.find(name) == m_Uniforms.end())
+		m_Uniforms[name] = glGetUniformLocation(m_Id, name.c_str());
+
+	if (m_Uniforms[name] == -1)
+	{
+		std::string message = "Uniform " + name + " does not exist!";
+		throw std::exception(message.c_str());
+	}
+
+	glUniform1i(m_Uniforms[name], slot);
+}
+
 Shader::~Shader()
 {
+	m_Uniforms.clear();
 	glDeleteProgram(m_Id);
 }
 
