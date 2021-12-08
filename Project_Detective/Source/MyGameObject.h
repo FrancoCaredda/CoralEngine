@@ -13,8 +13,6 @@ public:
 	MyGameObject(const std::string& name)
 		: AGameObject(name) { }
 
-	void SetSpeed(float speed);
-
 	virtual void Start() override;
 	virtual void Update(float deltaTime) override;
 
@@ -22,6 +20,5 @@ public:
 private:
 	ShaderProgram* m_Program;
 	//Transform* m_Transform;
-	float m_Speed = 0.05;
 };
 

@@ -998,6 +998,7 @@
     <None Include="vendor\glm-master\glm\gtx\wrap.inl" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\Components\PhysicsComponent.h" />
     <ClInclude Include="Source\Components\BoxCollider.h" />
     <ClInclude Include="Source\GameObjects\Camera.h" />
     <ClInclude Include="Source\GameObjects\GameObject.h" />
@@ -1306,6 +1307,7 @@
     <ClInclude Include="vendor\glm-master\glm\vector_relational.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Components\PhysicsComponent.cpp" />
     <ClCompile Include="Source\Components\BoxCollider.cpp" />
     <ClCompile Include="Source\GameObjects\Camera.cpp" />
     <ClCompile Include="Source\GameObjects\GameObject.cpp" />

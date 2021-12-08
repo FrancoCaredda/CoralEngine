@@ -3,11 +3,9 @@
 #include "Components/Sprite.h"
 #include "Components/Transform.h"
 #include "Components/BoxCollider.h"
+#include "Components/PhysicsComponent.h"
 
-void MyGameObject::SetSpeed(float speed)
-{
-	m_Speed = speed;
-}
+
 
 void MyGameObject::Start()
 {
@@ -27,22 +25,30 @@ void MyGameObject::Start()
 	m_Program->Link();
 
 	Sprite* sprite = AddComponent<Sprite>();
+	sprite->SetShaderProgram(m_Program);
+	
 	BoxCollider* collider = AddComponent<BoxCollider>();
-	collider->SetWidth(50);
-	collider->SetHeight(50);
 	//m_Transform = AddComponent<Transform>();
 
-	sprite->SetShaderProgram(m_Program);
+	PhysicsComponent* physics = AddComponent<PhysicsComponent>();
 }
 
 void MyGameObject::Update(float deltaTime)
 {
-	GetComponent<Transform>()->Translate(glm::vec3(m_Speed * deltaTime, 0.0f, 0.0f));
+	//GetComponent<Transform>()->Translate(glm::vec3(m_Speed * deltaTime, 0.0f, 0.0f));
 	//glm::vec3 position = m_Transform->GetPosition();
-	
+	PhysicsComponent* physics = GetComponent<PhysicsComponent>();
+	physics->Update(deltaTime);
 
-	//if (position.x <= 0 || position.x >= 600)
-		//m_Speed *= -1;
+	if (GetComponent<Transform>()->GetPosition().x <= 0)
+		physics->SetVelocity(abs(physics->GetVelocity().x), physics->GetVelocity().y);
+	if (GetComponent<Transform>()->GetPosition().x >= 600 - GetComponent<BoxCollider>()->GetWidth())
+		physics->SetVelocity(abs(physics->GetVelocity().x) * -1, physics->GetVelocity().y);
+
+	if (GetComponent<Transform>()->GetPosition().y <= 0)
+		physics->SetVelocity(physics->GetVelocity().x, abs(physics->GetVelocity().y));
+	if (GetComponent<Transform>()->GetPosition().y >= 480 - GetComponent<BoxCollider>()->GetHeight())
+		physics->SetVelocity(physics->GetVelocity().x, abs(physics->GetVelocity().y)*-1);
 }
 
 MyGameObject::~MyGameObject()

@@ -22,8 +22,9 @@ public:
 	virtual ~GameWindow() override;
 private:
 	Camera* m_Camera;
-	MyGameObject* m_Object;
-	MyGameObject* m_Object2;
+
+	MyGameObject** m_ObjetctsList;
+	int m_ObjectsCount = 0;
 };
 
 #endif // !GAME_WINDOW_H

@@ -10,7 +10,7 @@ Sprite::Sprite(AGameObject* owner, ShaderProgram* shader)
 	m_VertexBuffer = new VertexBufferObject(GL_ARRAY_BUFFER, GL_STATIC_DRAW);
 	m_VertexBuffer->Bind();
 
-	m_VertexBuffer->SendData({
+	/*m_VertexBuffer->SendData({
 		//-0.5f, -0.5f,
 		//-0.5f, 0.5f,
 		// 0.5f, -0.5f,
@@ -23,7 +23,16 @@ Sprite::Sprite(AGameObject* owner, ShaderProgram* shader)
 		100.0f, 50.0f,
 		50.0f, 100.0f,
 		100.0f, 100.0f
-	});
+	});*/
+
+	m_VertexBuffer->SendData({
+		0.0f,	0.0f,
+		0.0f,	50.0f,
+		50.0f,	0.0f,
+		50.0f,	0.0f,
+		0.0f,	50.0f,
+		50.0f,	50.0f
+		});
 	
 	m_VertexBuffer->Unbind();
 
