@@ -21,19 +21,19 @@ Texture::Texture(const std::string& textureName, int slot)
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, x, y, 0, GL_RGBA, GL_UNSIGNED_BYTE, m_Data);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, x, y, 0, GL_RGBA, GL_UNSIGNED_BYTE, m_Data);
 	glGenerateMipmap(GL_TEXTURE_2D);
 
 	glBindTexture(GL_TEXTURE_2D, 0);
 }
 
-void Texture::Bind()
+void Texture::Bind() const noexcept
 {
 	glActiveTexture(GL_TEXTURE0 + m_Slot);
 	glBindTexture(GL_TEXTURE_2D, m_Id);
 }
 
-void Texture::Unbind()
+void Texture::Unbind() const noexcept
 {
 	glBindTexture(GL_TEXTURE_2D, 0);
 }

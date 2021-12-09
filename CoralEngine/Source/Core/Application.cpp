@@ -34,6 +34,8 @@ bool Application::InitGL() noexcept
 
 	Renderer::Init();
 
+	glEnable(GL_DEPTH_TEST);
+
 	return true;
 }
 
@@ -77,8 +79,8 @@ void Application::RunLoop() noexcept
 	{
 		Renderer::Clear();
 
-		deltaTime = (glfwGetTime() - previousTime) / 60;
-		previousTime = deltaTime;
+		deltaTime = (glfwGetTime() - previousTime);
+		previousTime += deltaTime;
 
 		s_Application.m_Window->Update(deltaTime);
 

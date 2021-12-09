@@ -32,12 +32,12 @@ Shader::Shader()
 	glDeleteShader(fragmentShader);
 }
 
-void Shader::Bind() noexcept
+void Shader::Bind() const noexcept
 {
 	glUseProgram(m_Id);
 }
 
-void Shader::Unbind() noexcept
+void Shader::Unbind() const noexcept
 {
 	glUseProgram(0);
 }

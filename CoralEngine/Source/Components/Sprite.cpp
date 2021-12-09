@@ -1,7 +1,5 @@
 #include "Sprite.h"
 
-int Sprite::s_Slot = 0;
-
 Sprite::Sprite(AGameObject* owner)
 {
 	try
@@ -24,10 +22,10 @@ Sprite::Sprite(AGameObject* owner)
 	m_IndexBuffer->Bind();
 
 	m_VertexBuffer->SendData({
-		50.0f, 50.0f,		0.0f, 0.0f,
-		50.0f, 100.0f,		0.0f, 1.0f,
-		100.0f, 50.0f,		1.0f, 0.0f,
-		100.0f, 100.0f,		1.0f, 1.0f
+		0.0f, 0.0f,		0.0f, 0.0f,
+		0.0f, 50.0f,	0.0f, 1.0f,
+		50.0f, 0.0f,	1.0f, 0.0f,
+		50.0f, 50.0f,	1.0f, 1.0f
 	});
 
 	m_IndexBuffer->SendData({0, 1, 2, 2, 1, 3});
@@ -50,9 +48,9 @@ void Sprite::Bind()
 	m_IndexBuffer->Bind();
 
 	m_Shader->Bind();
-
-	if (m_Texture != nullptr)
-		m_Texture->Bind();
+	
+	if (m_TextureHandle != nullptr)
+		m_TextureHandle.Bind();
 }
 
 void Sprite::Unbind()
@@ -60,19 +58,9 @@ void Sprite::Unbind()
 	m_VertexArray->Unbind();
 	m_VertexBuffer->Unbind();
 	m_Shader->Unbind();
-	m_Texture->Unbind();
-}
 
-void Sprite::LoadTexture(const std::string& fileName)
-{
-	if (m_Texture != nullptr)
-		delete m_Texture;
-
-	if (s_Slot > 32)
-		throw std::exception("Error: texture count is greater than max (32)");
-
-	m_Texture = new Texture(fileName, s_Slot);
-	s_Slot++;
+	if (m_TextureHandle != nullptr)
+		m_TextureHandle.Unbind();
 }
 
 void Sprite::SetColor(const glm::vec4& color) noexcept
@@ -80,12 +68,14 @@ void Sprite::SetColor(const glm::vec4& color) noexcept
 	m_Color = color;
 }
 
+void Sprite::SetTexture(const AssetHandle& textureHandle)
+{
+	m_TextureHandle = textureHandle;
+}
+
 Sprite::~Sprite()
 {
 	delete m_VertexArray;
 	delete m_VertexBuffer;
 	delete m_Shader;
-
-	if (m_Texture != nullptr)
-		delete m_Texture;
 }

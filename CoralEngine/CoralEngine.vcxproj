@@ -998,6 +998,8 @@
     <None Include="vendor\glm-master\glm\gtx\wrap.inl" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\Core\AssetManager.h" />
+    <ClInclude Include="Source\Core\Asset.h" />
     <ClInclude Include="Source\Core\IndexBufferObject.h" />
     <ClInclude Include="Source\Core\Shader.h" />
     <ClInclude Include="Source\GameObjects\Camera.h" />
@@ -1307,6 +1309,8 @@
     <ClInclude Include="vendor\stb-master\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Core\AssetManager.cpp" />
+    <ClCompile Include="Source\Core\Asset.cpp" />
     <ClCompile Include="Source\Core\IndexBufferObject.cpp" />
     <ClCompile Include="Source\Core\Shader.cpp" />
     <ClCompile Include="Source\GameObjects\Camera.cpp" />

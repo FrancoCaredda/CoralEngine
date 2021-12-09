@@ -1,0 +1,83 @@
+﻿  IndexBufferObject.cpp
+  Shader.cpp
+  Camera.cpp
+C:\Projects\CoralEngine\CoralEngine\Source\GameObjects\GameObject.h(29,20): warning C4251: 'AGameObject::m_Name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'AGameObject'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Projects\CoralEngine\CoralEngine\Source\GameObjects\GameObject.h(30,53): warning C4251: 'AGameObject::m_Components': class 'std::unordered_map<std::string,void *,std::hash<std::string>,std::equal_to<std::string>,std::allocator<std::pair<const std::string,void *>>>' needs to have dll-interface to be used by clients of class 'AGameObject'
+C:\Projects\CoralEngine\CoralEngine\Source\GameObjects\GameObject.h(30): message : see declaration of 'std::unordered_map<std::string,void *,std::hash<std::string>,std::equal_to<std::string>,std::allocator<std::pair<const std::string,void *>>>'
+C:\Projects\CoralEngine\CoralEngine\Source\Components\Transform.h(25,22): warning C4251: 'Transform::m_Position': struct 'glm::vec<3,float,glm::packed_highp>' needs to have dll-interface to be used by clients of class 'Transform'
+C:\Projects\CoralEngine\CoralEngine\vendor\glm-master\glm\fwd.hpp(420): message : see declaration of 'glm::vec<3,float,glm::packed_highp>'
+C:\Projects\CoralEngine\CoralEngine\Source\Components\Transform.h(26,18): warning C4251: 'Transform::m_Size': struct 'glm::vec<3,float,glm::packed_highp>' needs to have dll-interface to be used by clients of class 'Transform'
+C:\Projects\CoralEngine\CoralEngine\vendor\glm-master\glm\fwd.hpp(420): message : see declaration of 'glm::vec<3,float,glm::packed_highp>'
+C:\Projects\CoralEngine\CoralEngine\Source\Components\Transform.h(30,23): warning C4251: 'Transform::m_Transform': struct 'glm::mat<4,4,glm::f32,glm::packed_highp>' needs to have dll-interface to be used by clients of class 'Transform'
+C:\Projects\CoralEngine\CoralEngine\vendor\glm-master\glm\fwd.hpp(520): message : see declaration of 'glm::mat<4,4,glm::f32,glm::packed_highp>'
+  GameObject.cpp
+C:\Projects\CoralEngine\CoralEngine\Source\GameObjects\GameObject.h(29,20): warning C4251: 'AGameObject::m_Name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'AGameObject'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Projects\CoralEngine\CoralEngine\Source\GameObjects\GameObject.h(30,53): warning C4251: 'AGameObject::m_Components': class 'std::unordered_map<std::string,void *,std::hash<std::string>,std::equal_to<std::string>,std::allocator<std::pair<const std::string,void *>>>' needs to have dll-interface to be used by clients of class 'AGameObject'
+C:\Projects\CoralEngine\CoralEngine\Source\GameObjects\GameObject.h(30): message : see declaration of 'std::unordered_map<std::string,void *,std::hash<std::string>,std::equal_to<std::string>,std::allocator<std::pair<const std::string,void *>>>'
+  Renderer.cpp
+C:\Projects\CoralEngine\CoralEngine\Source\GameObjects\GameObject.h(29,20): warning C4251: 'AGameObject::m_Name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'AGameObject'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Projects\CoralEngine\CoralEngine\Source\GameObjects\GameObject.h(30,53): warning C4251: 'AGameObject::m_Components': class 'std::unordered_map<std::string,void *,std::hash<std::string>,std::equal_to<std::string>,std::allocator<std::pair<const std::string,void *>>>' needs to have dll-interface to be used by clients of class 'AGameObject'
+C:\Projects\CoralEngine\CoralEngine\Source\GameObjects\GameObject.h(30): message : see declaration of 'std::unordered_map<std::string,void *,std::hash<std::string>,std::equal_to<std::string>,std::allocator<std::pair<const std::string,void *>>>'
+C:\Projects\CoralEngine\CoralEngine\Source\Components\Sprite.h(43,19): warning C4251: 'Sprite::m_Color': struct 'glm::vec<4,float,glm::packed_highp>' needs to have dll-interface to be used by clients of class 'Sprite'
+C:\Projects\CoralEngine\CoralEngine\vendor\glm-master\glm\fwd.hpp(421): message : see declaration of 'glm::vec<4,float,glm::packed_highp>'
+C:\Projects\CoralEngine\CoralEngine\Source\Core\Renderer.h(50,30): warning C4251: 'Renderer::m_Targets': class 'std::list<Sprite *,std::allocator<Sprite *>>' needs to have dll-interface to be used by clients of class 'Renderer'
+C:\Projects\CoralEngine\CoralEngine\Source\Core\Renderer.h(50): message : see declaration of 'std::list<Sprite *,std::allocator<Sprite *>>'
+C:\Projects\CoralEngine\CoralEngine\Source\Core\Renderer.h(54,24): warning C4251: 'Renderer::m_Projection': struct 'glm::mat<4,4,glm::f32,glm::packed_highp>' needs to have dll-interface to be used by clients of class 'Renderer'
+C:\Projects\CoralEngine\CoralEngine\vendor\glm-master\glm\fwd.hpp(520): message : see declaration of 'glm::mat<4,4,glm::f32,glm::packed_highp>'
+C:\Projects\CoralEngine\CoralEngine\Source\Components\Transform.h(25,22): warning C4251: 'Transform::m_Position': struct 'glm::vec<3,float,glm::packed_highp>' needs to have dll-interface to be used by clients of class 'Transform'
+C:\Projects\CoralEngine\CoralEngine\vendor\glm-master\glm\fwd.hpp(420): message : see declaration of 'glm::vec<3,float,glm::packed_highp>'
+C:\Projects\CoralEngine\CoralEngine\Source\Components\Transform.h(26,18): warning C4251: 'Transform::m_Size': struct 'glm::vec<3,float,glm::packed_highp>' needs to have dll-interface to be used by clients of class 'Transform'
+C:\Projects\CoralEngine\CoralEngine\vendor\glm-master\glm\fwd.hpp(420): message : see declaration of 'glm::vec<3,float,glm::packed_highp>'
+C:\Projects\CoralEngine\CoralEngine\Source\Components\Transform.h(30,23): warning C4251: 'Transform::m_Transform': struct 'glm::mat<4,4,glm::f32,glm::packed_highp>' needs to have dll-interface to be used by clients of class 'Transform'
+C:\Projects\CoralEngine\CoralEngine\vendor\glm-master\glm\fwd.hpp(520): message : see declaration of 'glm::mat<4,4,glm::f32,glm::packed_highp>'
+  Application.cpp
+C:\Projects\CoralEngine\CoralEngine\Source\Core\AWindow.h(39,21): warning C4251: 'AWindow::m_Title': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'AWindow'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Projects\CoralEngine\CoralEngine\Source\GameObjects\GameObject.h(29,20): warning C4251: 'AGameObject::m_Name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'AGameObject'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Projects\CoralEngine\CoralEngine\Source\GameObjects\GameObject.h(30,53): warning C4251: 'AGameObject::m_Components': class 'std::unordered_map<std::string,void *,std::hash<std::string>,std::equal_to<std::string>,std::allocator<std::pair<const std::string,void *>>>' needs to have dll-interface to be used by clients of class 'AGameObject'
+C:\Projects\CoralEngine\CoralEngine\Source\GameObjects\GameObject.h(30): message : see declaration of 'std::unordered_map<std::string,void *,std::hash<std::string>,std::equal_to<std::string>,std::allocator<std::pair<const std::string,void *>>>'
+C:\Projects\CoralEngine\CoralEngine\Source\Components\Sprite.h(43,19): warning C4251: 'Sprite::m_Color': struct 'glm::vec<4,float,glm::packed_highp>' needs to have dll-interface to be used by clients of class 'Sprite'
+C:\Projects\CoralEngine\CoralEngine\vendor\glm-master\glm\fwd.hpp(421): message : see declaration of 'glm::vec<4,float,glm::packed_highp>'
+C:\Projects\CoralEngine\CoralEngine\Source\Core\Renderer.h(50,30): warning C4251: 'Renderer::m_Targets': class 'std::list<Sprite *,std::allocator<Sprite *>>' needs to have dll-interface to be used by clients of class 'Renderer'
+C:\Projects\CoralEngine\CoralEngine\Source\Core\Renderer.h(50): message : see declaration of 'std::list<Sprite *,std::allocator<Sprite *>>'
+C:\Projects\CoralEngine\CoralEngine\Source\Core\Renderer.h(54,24): warning C4251: 'Renderer::m_Projection': struct 'glm::mat<4,4,glm::f32,glm::packed_highp>' needs to have dll-interface to be used by clients of class 'Renderer'
+C:\Projects\CoralEngine\CoralEngine\vendor\glm-master\glm\fwd.hpp(520): message : see declaration of 'glm::mat<4,4,glm::f32,glm::packed_highp>'
+C:\Projects\CoralEngine\CoralEngine\Source\Core\Application.cpp(80,46): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  VertexBufferObject.cpp
+  AWindow.cpp
+C:\Projects\CoralEngine\CoralEngine\Source\Core\AWindow.h(39,21): warning C4251: 'AWindow::m_Title': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'AWindow'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+  VertexArrayObject.cpp
+  Sprite.cpp
+C:\Projects\CoralEngine\CoralEngine\Source\GameObjects\GameObject.h(29,20): warning C4251: 'AGameObject::m_Name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'AGameObject'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Projects\CoralEngine\CoralEngine\Source\GameObjects\GameObject.h(30,53): warning C4251: 'AGameObject::m_Components': class 'std::unordered_map<std::string,void *,std::hash<std::string>,std::equal_to<std::string>,std::allocator<std::pair<const std::string,void *>>>' needs to have dll-interface to be used by clients of class 'AGameObject'
+C:\Projects\CoralEngine\CoralEngine\Source\GameObjects\GameObject.h(30): message : see declaration of 'std::unordered_map<std::string,void *,std::hash<std::string>,std::equal_to<std::string>,std::allocator<std::pair<const std::string,void *>>>'
+C:\Projects\CoralEngine\CoralEngine\Source\Components\Sprite.h(43,19): warning C4251: 'Sprite::m_Color': struct 'glm::vec<4,float,glm::packed_highp>' needs to have dll-interface to be used by clients of class 'Sprite'
+C:\Projects\CoralEngine\CoralEngine\vendor\glm-master\glm\fwd.hpp(421): message : see declaration of 'glm::vec<4,float,glm::packed_highp>'
+  Transform.cpp
+C:\Projects\CoralEngine\CoralEngine\Source\GameObjects\GameObject.h(29,20): warning C4251: 'AGameObject::m_Name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'AGameObject'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Projects\CoralEngine\CoralEngine\Source\GameObjects\GameObject.h(30,53): warning C4251: 'AGameObject::m_Components': class 'std::unordered_map<std::string,void *,std::hash<std::string>,std::equal_to<std::string>,std::allocator<std::pair<const std::string,void *>>>' needs to have dll-interface to be used by clients of class 'AGameObject'
+C:\Projects\CoralEngine\CoralEngine\Source\GameObjects\GameObject.h(30): message : see declaration of 'std::unordered_map<std::string,void *,std::hash<std::string>,std::equal_to<std::string>,std::allocator<std::pair<const std::string,void *>>>'
+C:\Projects\CoralEngine\CoralEngine\Source\Components\Transform.h(25,22): warning C4251: 'Transform::m_Position': struct 'glm::vec<3,float,glm::packed_highp>' needs to have dll-interface to be used by clients of class 'Transform'
+C:\Projects\CoralEngine\CoralEngine\vendor\glm-master\glm\fwd.hpp(420): message : see declaration of 'glm::vec<3,float,glm::packed_highp>'
+C:\Projects\CoralEngine\CoralEngine\Source\Components\Transform.h(26,18): warning C4251: 'Transform::m_Size': struct 'glm::vec<3,float,glm::packed_highp>' needs to have dll-interface to be used by clients of class 'Transform'
+C:\Projects\CoralEngine\CoralEngine\vendor\glm-master\glm\fwd.hpp(420): message : see declaration of 'glm::vec<3,float,glm::packed_highp>'
+C:\Projects\CoralEngine\CoralEngine\Source\Components\Transform.h(30,23): warning C4251: 'Transform::m_Transform': struct 'glm::mat<4,4,glm::f32,glm::packed_highp>' needs to have dll-interface to be used by clients of class 'Transform'
+C:\Projects\CoralEngine\CoralEngine\vendor\glm-master\glm\fwd.hpp(520): message : see declaration of 'glm::mat<4,4,glm::f32,glm::packed_highp>'
+  Texture.cpp
+  stbi_realization.cpp
+  glm.cpp
+     Creating library C:\Projects\CoralEngine\Release\CoralEngine.lib and object C:\Projects\CoralEngine\Release\CoralEngine.exp
+LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 1077 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+glew32s.lib(glew.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'glew32s.lib(glew.obj)' or at 'C:\Projects\CoralEngine\Release\vc120.pdb'; linking object as if no debug info
+  CoralEngine.vcxproj -> C:\Projects\CoralEngine\Release\CoralEngine.dll

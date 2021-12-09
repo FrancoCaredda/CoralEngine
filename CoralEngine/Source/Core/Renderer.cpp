@@ -16,7 +16,7 @@ Renderer& Renderer::Get() noexcept
 
 void Renderer::Clear() noexcept
 {
-    glClear(GL_COLOR_BUFFER_BIT);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
 void Renderer::ClearColor(float r, float g, float b, float a) noexcept
@@ -24,24 +24,26 @@ void Renderer::ClearColor(float r, float g, float b, float a) noexcept
     glClearColor(r, g, b, a);
 }
 
-void Renderer::PushTarget(Sprite* target) noexcept
+#ifdef _DEBUG
+void Renderer::Mode(RenderMode mode) noexcept
 {
-    s_Instance.m_Targets.push_back(target);
-}
-
-void Renderer::PopTarget() noexcept
-{
-    s_Instance.m_Targets.pop_front();
-}
-
-void Renderer::DrawSpriteArrays() noexcept
-{
-    for (auto i = s_Instance.m_Targets.cbegin(); i != s_Instance.m_Targets.cend(); i++)
+    switch (mode)
     {
-        (*i)->Bind();
-        glDrawArrays(GL_TRIANGLES, 0, 6);
+    case FILL:
+        glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+        break;
+    case LINE:
+        glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+        break;
+    case POINT:
+        glPolygonMode(GL_FRONT_AND_BACK, GL_POINT);
+        break;
+    default:
+        glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+        break;
     }
 }
+#endif // _DEBUG
 
 void Renderer::SetCurrentCamera(Camera* camera) noexcept
 {
@@ -59,8 +61,8 @@ void Renderer::DrawObject(AGameObject* object) noexcept
 
     sprite->m_Shader->SetUniformVector("u_Color", sprite->m_Color);
 
-    if (sprite->m_Texture != nullptr)
-        sprite->m_Shader->SetUniformImage("u_Texture",  sprite->m_Texture->GetSlot());
+    if (sprite->m_TextureHandle != nullptr)
+        sprite->m_Shader->SetUniformImage("u_Texture", sprite->m_TextureHandle.GetData());
 
     if (object->HasComponent<Transform>())
     {

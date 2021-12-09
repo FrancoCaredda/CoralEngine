@@ -10,6 +10,7 @@
 #include <unordered_map>
 #include <iostream>
 
+
 #define CORAL_STD_VERTEX_SHADER "#version 330 core\n"\
 								"layout(location = 0) in vec2 a_Position;\n"\
 								"layout(location = 1) in vec2 a_UV;\n"\
@@ -37,8 +38,8 @@ class Shader
 public:
 	Shader();
 
-	void Bind() noexcept;
-	void Unbind() noexcept;
+	void Bind() const noexcept;
+	void Unbind() const noexcept;
 
 	void SetUniformVector(const std::string& name, float value);
 	void SetUniformVector(const std::string& name, const glm::vec2& vector);

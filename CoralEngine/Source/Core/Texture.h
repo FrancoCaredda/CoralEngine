@@ -4,20 +4,22 @@
 #include "defines.h"
 #include "stb_image.h"
 
+#include "Asset.h"
+
 #include <string>
 
-class Texture
+class Texture : public IAsset
 {
 public:
 	Texture(const std::string& textureName, int slot);
 	Texture(const Texture&) = delete;
 
-	void Bind();
-	void Unbind();
+	virtual void Bind() const noexcept override;
+	virtual void Unbind() const noexcept override;
 
 	inline int GetSlot() const noexcept { return m_Slot; }
 
-	~Texture();
+	virtual ~Texture() override;
 private:
 	uint32_t m_Id;
 	uint8_t* m_Data;
