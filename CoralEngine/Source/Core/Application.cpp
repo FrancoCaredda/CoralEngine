@@ -79,14 +79,8 @@ void Application::RunLoop() noexcept
 	{
 		Renderer::Clear();
 
-<<<<<<< HEAD
 		deltaTime = glfwGetTime() - previousTime;
 		previousTime += deltaTime;
-		//previousTime = deltaTime;
-=======
-		deltaTime = (glfwGetTime() - previousTime);
-		previousTime += deltaTime;
->>>>>>> TexturesAndAssets
 
 		s_Application.m_Window->Update(deltaTime);
 

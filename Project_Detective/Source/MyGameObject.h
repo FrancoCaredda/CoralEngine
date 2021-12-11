@@ -17,13 +17,6 @@ public:
 
 	virtual ~MyGameObject() override;
 private:
-<<<<<<< HEAD
-	ShaderProgram* m_Program;
-	//Transform* m_Transform;
-=======
-	Transform* m_Transform;
 	Sprite* m_Sprite;
-	float m_Speed = 1000;
->>>>>>> TexturesAndAssets
 };
 

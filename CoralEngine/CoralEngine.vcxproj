@@ -998,15 +998,12 @@
     <None Include="vendor\glm-master\glm\gtx\wrap.inl" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <ClInclude Include="Source\Components\PhysicsComponent.h" />
     <ClInclude Include="Source\Components\BoxCollider.h" />
-=======
     <ClInclude Include="Source\Core\AssetManager.h" />
     <ClInclude Include="Source\Core\Asset.h" />
     <ClInclude Include="Source\Core\IndexBufferObject.h" />
     <ClInclude Include="Source\Core\Shader.h" />
->>>>>>> TexturesAndAssets
     <ClInclude Include="Source\GameObjects\Camera.h" />
     <ClInclude Include="Source\GameObjects\GameObject.h" />
     <ClInclude Include="Source\Core\Renderer.h" />
@@ -1314,15 +1311,12 @@
     <ClInclude Include="vendor\stb-master\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <ClCompile Include="Source\Components\PhysicsComponent.cpp" />
     <ClCompile Include="Source\Components\BoxCollider.cpp" />
-=======
     <ClCompile Include="Source\Core\AssetManager.cpp" />
     <ClCompile Include="Source\Core\Asset.cpp" />
     <ClCompile Include="Source\Core\IndexBufferObject.cpp" />
     <ClCompile Include="Source\Core\Shader.cpp" />
->>>>>>> TexturesAndAssets
     <ClCompile Include="Source\GameObjects\Camera.cpp" />
     <ClCompile Include="Source\GameObjects\GameObject.cpp" />
     <ClCompile Include="Source\Core\Renderer.cpp" />

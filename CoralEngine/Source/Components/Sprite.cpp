@@ -1,6 +1,7 @@
 #include "Sprite.h"
 
 Sprite::Sprite(AGameObject* owner)
+	: m_Color(1.0, 1.0, 1.0, 1.0)
 {
 	try
 	{
@@ -18,33 +19,6 @@ Sprite::Sprite(AGameObject* owner)
 	m_VertexBuffer = new VertexBufferObject(GL_ARRAY_BUFFER, GL_STATIC_DRAW);
 	m_VertexBuffer->Bind();
 
-<<<<<<< HEAD
-	/*m_VertexBuffer->SendData({
-		//-0.5f, -0.5f,
-		//-0.5f, 0.5f,
-		// 0.5f, -0.5f,
-		// 0.5f, -0.5f,
-		//-0.5f, 0.5f,
-		// 0.5f, 0.5f
-		50.0f, 50.0f,
-		50.0f, 100.0f,
-		100.0f, 50.0f,
-		100.0f, 50.0f,
-		50.0f, 100.0f,
-		100.0f, 100.0f
-	});*/
-
-	m_VertexBuffer->SendData({
-		0.0f,	0.0f,
-		0.0f,	50.0f,
-		50.0f,	0.0f,
-		50.0f,	0.0f,
-		0.0f,	50.0f,
-		50.0f,	50.0f
-		});
-	
-	m_VertexBuffer->Unbind();
-=======
 	m_IndexBuffer = new IndexBufferObject(GL_STATIC_DRAW);
 	m_IndexBuffer->Bind();
 
@@ -54,7 +28,6 @@ Sprite::Sprite(AGameObject* owner)
 		50.0f, 0.0f,	1.0f, 0.0f,
 		50.0f, 50.0f,	1.0f, 1.0f
 	});
->>>>>>> TexturesAndAssets
 
 	m_IndexBuffer->SendData({0, 1, 2, 2, 1, 3});
 

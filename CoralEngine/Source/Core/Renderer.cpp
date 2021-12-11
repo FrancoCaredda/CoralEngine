@@ -64,12 +64,9 @@ void Renderer::DrawObject(AGameObject* object) noexcept
     if (sprite->m_TextureHandle != nullptr)
         sprite->m_Shader->SetUniformImage("u_Texture", sprite->m_TextureHandle.GetData());
 
-    if (object->HasComponent<Transform>())
-    {
-        sprite->m_Shader->SetUniformMatrix("u_Model", object->GetComponent<Transform>()->GetTransform());
-        sprite->m_Shader->SetUniformMatrix("u_View", s_Instance.m_Camera->GetComponent<Transform>()->GetTransform());
-        sprite->m_Shader->SetUniformMatrix("u_Projection", s_Instance.m_Projection);
-    }
+    sprite->m_Shader->SetUniformMatrix("u_Model", object->GetComponent<Transform>()->GetTransform());
+    sprite->m_Shader->SetUniformMatrix("u_View", s_Instance.m_Camera->GetComponent<Transform>()->GetTransform());
+    sprite->m_Shader->SetUniformMatrix("u_Projection", s_Instance.m_Projection);
 
 
     glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);

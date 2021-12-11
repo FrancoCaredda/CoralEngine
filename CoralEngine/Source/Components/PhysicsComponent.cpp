@@ -124,7 +124,9 @@ void PhysicsComponent::ResolveCollision( Manifold& m)
 
 	// calculating momentum of force
 	double j = -(1 + e) * velAlongNormal;
-	j /= m.A->GetInvertedMass() + m.B->GetInvertedMass();
+
+	if (abs(m.A->GetInvertedMass() + m.B->GetInvertedMass()) > 0.0000001)
+		j /= m.A->GetInvertedMass() + m.B->GetInvertedMass();
 
 	// applies a momentum of force
 	glm::vec2 impulse = j * m.normal;

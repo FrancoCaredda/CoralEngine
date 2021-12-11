@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <Components/BoxCollider.h>
+#include "Core/AssetManager.h"
 
 GameWindow::GameWindow(const std::string& title, int width, int height, const CoralMonitor& monitor)
 	: AWindow(title, width, height, monitor)
@@ -12,6 +13,8 @@ GameWindow::GameWindow(const std::string& title, int width, int height, const Co
 
 void GameWindow::Start()
 {
+	AssetManager::LoadTexture("Assets\\Textures\\smile.png", 0);
+	Renderer::ClearColor(1.0, 1.0, 1.0, 1.0);
 	m_ObjetctsList = new MyGameObject * [4];
 	m_ObjectsCount = 4;
 
@@ -23,12 +26,16 @@ void GameWindow::Start()
 	floorPhysics->SetMass(0);
 	floorPhysics->SetVelocity(0, 0);
 
+	floorPhysics->SetElasticity(1);
+
 	m_ObjetctsList[1] = new MyGameObject("Obo");
 	m_ObjetctsList[1]->Start();
 	PhysicsComponent* oboPhysics = m_ObjetctsList[1]->GetComponent<PhysicsComponent>();
 	oboPhysics->SetMass(10);
 	//oboPhysics->SetVelocity(100, 0);
 	m_ObjetctsList[1]->GetComponent<Transform>()->Translate(glm::vec3(98, 300, 0));
+
+	oboPhysics->SetElasticity(1);
 
 	m_ObjetctsList[2] = new MyGameObject("Box1");
 	m_ObjetctsList[2]->Start();
@@ -37,12 +44,18 @@ void GameWindow::Start()
 	//box1Phys->SetVelocity(-10, 0);
 	m_ObjetctsList[2]->GetComponent<Transform>()->Translate(glm::vec3(49, 200, 0));
 
+	box1Phys->SetElasticity(1);
+
+
 	m_ObjetctsList[3] = new MyGameObject("Box2");
 	m_ObjetctsList[3]->Start();
 	PhysicsComponent* box2Phys = m_ObjetctsList[3]->GetComponent<PhysicsComponent>();
-	box2Phys->SetMass(20);
 	//box2Phys->SetVelocity(-80, 200);
-	m_ObjetctsList[3]->GetComponent<Transform>()->Translate(glm::vec3(0, 100, 0));
+	m_ObjetctsList[3]->GetComponent<Transform>()->Translate(glm::vec3(0, 51, 0));
+
+	box2Phys->SetElasticity(1);
+	box2Phys->SetMass(0);
+	box2Phys->SetVelocity(100, 0);
 
 	m_Camera = new Camera();
 
@@ -51,7 +64,6 @@ void GameWindow::Start()
 
 void GameWindow::Update(float deltaTime)
 {
-<<<<<<< HEAD
 	for (int i = 0; i < m_ObjectsCount; i++)
 	{
 		m_ObjetctsList[i]->Update(deltaTime);
@@ -67,7 +79,7 @@ void GameWindow::Update(float deltaTime)
 
 			if (firstBox->HasCollision(*secondBox))
 			{
-				//std::cout << "Collision!\n";
+				std::cout << "Collision!\n";
 				Manifold m = firstBox->GetManifoldWith(*secondBox);
 
 				PhysicsComponent::ResolveCollision(m);
@@ -75,7 +87,7 @@ void GameWindow::Update(float deltaTime)
 			}
 			else
 			{
-				//std::cout << "Not Collide!\n";
+				std::cout << "Not Collide!\n";
 			}
 		}
 	}
@@ -84,12 +96,6 @@ void GameWindow::Update(float deltaTime)
 	{
 		Renderer::DrawObject(m_ObjetctsList[i]);
 	}
-=======
-	m_Object->Update(deltaTime);
-	std::cout << deltaTime << std::endl;
-
-	Renderer::DrawObject(m_Object);
->>>>>>> TexturesAndAssets
 }
 
 GameWindow::~GameWindow()
