@@ -2,3 +2,8 @@
 Debug/
 CoralEngine/Debug/
 Project_Detective/Debug/
+CoralEngine/Release/
+Project_Detective/Release/
+DiagnosticSession/
+x64/
+Release/
