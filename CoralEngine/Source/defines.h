@@ -5,7 +5,7 @@
 #define CORAL_API __declspec(dllexport)
 #else
 #define CORAL_API __declspec(dllimport)
-#endif // CORAL_ENGINE_EXPORT
+#endif // !CORAL_ENGINE_EXPORT
 
 #include "GL/glew.h"
 #include "glfw3.h"

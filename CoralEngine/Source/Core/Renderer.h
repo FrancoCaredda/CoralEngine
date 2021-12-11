@@ -10,7 +10,6 @@
 #include "Core/VertexBufferObject.h"
 
 #include "Core/Shader.h"
-#include "Core/ShaderProgram.h"
 
 #include "Components/Sprite.h"
 
@@ -22,31 +21,32 @@
 class CORAL_API Renderer
 {
 public:
+#ifdef _DEBUG
+	enum RenderMode { FILL = 0, LINE = 1, POINT = 2 };
+#endif // _DEBUG
+
+	static void Init() noexcept;
+
 	static Renderer& Get() noexcept;
 
 	static void Clear() noexcept;
 	static void ClearColor(float r, float g, float b, float a) noexcept;
 
-	static void PushTarget(Sprite* target) noexcept;
-	static void PopTarget() noexcept;
-
-	static void DrawSpriteArrays() noexcept;
-	static void DrawSpriteIndecies() noexcept;
-
-	static void Init() noexcept;
+#ifdef _DEBUG
+	static void Mode(RenderMode mode) noexcept;
+#endif // _DEBUG
 
 	static void SetCurrentCamera(Camera* camera) noexcept;
 	static void DrawObject(AGameObject* object) noexcept;
 
+	static void Shutdown() noexcept;
 private:
 	Renderer() = default;
 	Renderer(const Renderer&) = delete;
 private:
 	static Renderer s_Instance;
-	std::list<Sprite*> m_Targets;
 
 	Camera* m_Camera;
-
 	glm::mat4 m_Projection;
 };
 

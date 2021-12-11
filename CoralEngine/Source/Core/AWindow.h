@@ -30,6 +30,7 @@ public:
 	friend class Application;
 private:
 	GLFWwindow* m_Context;
+protected:
 	CoralMonitor m_Monitor;
 
 	int m_Width;

@@ -1,9 +1,10 @@
 #include "Application.h"
 
-#include "Core/Renderer.h"
+#include "Renderer.h"
 
 #include <iostream>
 
+#include <ctime>
 
 Application Application::s_Application;
 
@@ -20,8 +21,6 @@ bool Application::Init() noexcept
 		return false;
 	}
 
-	Renderer::Init();
-
 	return true;
 }
 
@@ -32,6 +31,10 @@ bool Application::InitGL() noexcept
 		std::cerr << "Glew wasn\'t initialized!";
 		return false;
 	}
+
+	Renderer::Init();
+
+	glEnable(GL_DEPTH_TEST);
 
 	return true;
 }
@@ -71,13 +74,19 @@ void Application::RunLoop() noexcept
 	float deltaTime;
 	float previousTime = 0;
 
+	glfwSwapInterval(1);
 	while (!glfwWindowShouldClose(s_Application.m_Window->m_Context))
 	{
 		Renderer::Clear();
 
+<<<<<<< HEAD
 		deltaTime = glfwGetTime() - previousTime;
 		previousTime += deltaTime;
 		//previousTime = deltaTime;
+=======
+		deltaTime = (glfwGetTime() - previousTime);
+		previousTime += deltaTime;
+>>>>>>> TexturesAndAssets
 
 		s_Application.m_Window->Update(deltaTime);
 
@@ -88,6 +97,7 @@ void Application::RunLoop() noexcept
 
 void Application::Shutdown() noexcept
 {
+	Renderer::Shutdown();
 	glfwTerminate();
 }
 

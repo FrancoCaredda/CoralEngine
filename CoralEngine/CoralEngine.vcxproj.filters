@@ -1179,12 +1179,6 @@
     <ClInclude Include="Source\Core\Renderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Core\Shader.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Core\ShaderProgram.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Components\Sprite.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -2055,10 +2049,29 @@
     <ClInclude Include="Source\GameObjects\Camera.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="Source\Components\BoxCollider.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Source\Components\PhysicsComponent.h">
+=======
+    <ClInclude Include="Source\Core\Shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\stb-master\stb_image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Core\Texture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Core\IndexBufferObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Core\Asset.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Core\AssetManager.h">
+>>>>>>> TexturesAndAssets
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -2078,12 +2091,6 @@
     <ClCompile Include="Source\Core\Renderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Core\Shader.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Core\ShaderProgram.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Components\Sprite.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -2099,10 +2106,29 @@
     <ClCompile Include="Source\GameObjects\Camera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="Source\Components\BoxCollider.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Source\Components\PhysicsComponent.cpp">
+=======
+    <ClCompile Include="Source\Core\Shader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Core\Texture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\stb-master\stbi_realization.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Core\IndexBufferObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Core\Asset.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Core\AssetManager.cpp">
+>>>>>>> TexturesAndAssets
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -51,6 +51,7 @@ void GameWindow::Start()
 
 void GameWindow::Update(float deltaTime)
 {
+<<<<<<< HEAD
 	for (int i = 0; i < m_ObjectsCount; i++)
 	{
 		m_ObjetctsList[i]->Update(deltaTime);
@@ -83,6 +84,12 @@ void GameWindow::Update(float deltaTime)
 	{
 		Renderer::DrawObject(m_ObjetctsList[i]);
 	}
+=======
+	m_Object->Update(deltaTime);
+	std::cout << deltaTime << std::endl;
+
+	Renderer::DrawObject(m_Object);
+>>>>>>> TexturesAndAssets
 }
 
 GameWindow::~GameWindow()

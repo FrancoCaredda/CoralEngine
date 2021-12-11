@@ -4,6 +4,11 @@
 
 Renderer Renderer::s_Instance;
 
+void Renderer::Init() noexcept
+{
+    s_Instance.m_Projection = glm::ortho(0.0f, 600.0f, 0.0f, 480.0f);
+}
+
 Renderer& Renderer::Get() noexcept
 {
     return s_Instance;
@@ -11,7 +16,7 @@ Renderer& Renderer::Get() noexcept
 
 void Renderer::Clear() noexcept
 {
-    glClear(GL_COLOR_BUFFER_BIT);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
 void Renderer::ClearColor(float r, float g, float b, float a) noexcept
@@ -19,29 +24,26 @@ void Renderer::ClearColor(float r, float g, float b, float a) noexcept
     glClearColor(r, g, b, a);
 }
 
-void Renderer::PushTarget(Sprite* target) noexcept
+#ifdef _DEBUG
+void Renderer::Mode(RenderMode mode) noexcept
 {
-    s_Instance.m_Targets.push_back(target);
-}
-
-void Renderer::PopTarget() noexcept
-{
-    s_Instance.m_Targets.pop_front();
-}
-
-void Renderer::DrawSpriteArrays() noexcept
-{
-    for (auto i = s_Instance.m_Targets.cbegin(); i != s_Instance.m_Targets.cend(); i++)
+    switch (mode)
     {
-        (*i)->Bind();
-        glDrawArrays(GL_TRIANGLES, 0, 6);
+    case FILL:
+        glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+        break;
+    case LINE:
+        glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+        break;
+    case POINT:
+        glPolygonMode(GL_FRONT_AND_BACK, GL_POINT);
+        break;
+    default:
+        glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+        break;
     }
 }
-
-void Renderer::Init() noexcept
-{
-    s_Instance.m_Projection = glm::ortho(0.0f, 600.0f, 0.0f, 480.0f);
-}
+#endif // _DEBUG
 
 void Renderer::SetCurrentCamera(Camera* camera) noexcept
 {
@@ -55,14 +57,24 @@ void Renderer::DrawObject(AGameObject* object) noexcept
 
     Sprite* sprite = object->GetComponent<Sprite>();
 
-    if (object->HasComponent<Transform>())
-    {
-        sprite->GetShaderProgram()->SetUniformMatrix("u_Model", object->GetComponent<Transform>()->GetTransform());
-        sprite->GetShaderProgram()->SetUniformMatrix("u_View", s_Instance.m_Camera->GetComponent<Transform>()->GetTransform());
-        sprite->GetShaderProgram()->SetUniformMatrix("u_Projection", s_Instance.m_Projection);
-    }
-
     sprite->Bind();
 
-    glDrawArrays(GL_TRIANGLES, 0, 6);
+    sprite->m_Shader->SetUniformVector("u_Color", sprite->m_Color);
+
+    if (sprite->m_TextureHandle != nullptr)
+        sprite->m_Shader->SetUniformImage("u_Texture", sprite->m_TextureHandle.GetData());
+
+    if (object->HasComponent<Transform>())
+    {
+        sprite->m_Shader->SetUniformMatrix("u_Model", object->GetComponent<Transform>()->GetTransform());
+        sprite->m_Shader->SetUniformMatrix("u_View", s_Instance.m_Camera->GetComponent<Transform>()->GetTransform());
+        sprite->m_Shader->SetUniformMatrix("u_Projection", s_Instance.m_Projection);
+    }
+
+
+    glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+}
+
+void Renderer::Shutdown() noexcept
+{
 }

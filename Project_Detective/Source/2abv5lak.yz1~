@@ -3,7 +3,6 @@
 #include "GameObjects/GameObject.h"
 #include "GameObjects/Camera.h"
 
-#include "Components/Sprite.h"
 #include "Components/Transform.h"
 
 class MyGameObject : public AGameObject
@@ -17,13 +16,7 @@ public:
 
 	virtual ~MyGameObject() override;
 private:
-<<<<<<< HEAD
-	ShaderProgram* m_Program;
-	//Transform* m_Transform;
-=======
 	Transform* m_Transform;
-	Sprite* m_Sprite;
-	float m_Speed = 1000;
->>>>>>> TexturesAndAssets
+	float m_Speed = 0.05;
 };
 
