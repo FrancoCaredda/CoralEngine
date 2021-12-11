@@ -13,7 +13,10 @@ public:
 	VertexBufferObject(const VertexBufferObject&) = delete;
 
 	VertexBufferObject& operator=(const VertexBufferObject&) = delete;
-
+	
+	void Allocate(size_t size);
+	// Requires Allocate call
+	void Push(void* data, size_t size, int offset);
 	void SendData(const std::vector<float>& vertexData);
 
 	void Bind() const noexcept;

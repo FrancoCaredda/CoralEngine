@@ -88,13 +88,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>CORAL_ENGINE_EXPORT;GLEW_STATIC;_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)CoralEngine\vendor\GLEW\include;$(SolutionDir)CoralEngine\vendor\GLFW\include\GLFW;$(SolutionDir)CoralEngine\Source;$(SolutionDir)CoralEngine\vendor\glm-master;$(SolutionDir)CoralEngine\vendor\stb-master\deprecated;$(SolutionDir)CoralEngine\vendor\stb-master;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)CoralEngine\vendor\GLEW\include;$(SolutionDir)CoralEngine\vendor\GLFW\include\GLFW;$(SolutionDir)CoralEngine\Source;$(SolutionDir)CoralEngine\vendor\glm-master;$(SolutionDir)CoralEngine\vendor\stb-master\deprecated;$(SolutionDir)CoralEngine\vendor\stb-master;$(SolutionDir)CoralEngine\vendor\freetype\include;$(SolutionDir)CoralEngine\vendor\freetype\include\freetype\config;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)CoralEngine\vendor\GLFW\lib-vc2019;$(SolutionDir)CoralEngine\vendor\GLEW\lib\Release\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glfw3.lib;glew32s.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)CoralEngine\vendor\GLFW\lib-vc2019;$(SolutionDir)CoralEngine\vendor\GLEW\lib\Release\Win32;$(SolutionDir)CoralEngine\vendor\freetype;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3.lib;glew32s.lib;freetype.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -105,15 +105,15 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>CORAL_ENGINE_EXPORT;GLEW_STATIC;_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)CoralEngine\vendor\GLEW\include;$(SolutionDir)CoralEngine\vendor\GLFW\include\GLFW;$(SolutionDir)CoralEngine\Source;$(SolutionDir)CoralEngine\vendor\glm-master;$(SolutionDir)CoralEngine\vendor\stb-master\deprecated;$(SolutionDir)CoralEngine\vendor\stb-master;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)CoralEngine\vendor\GLEW\include;$(SolutionDir)CoralEngine\vendor\GLFW\include\GLFW;$(SolutionDir)CoralEngine\Source;$(SolutionDir)CoralEngine\vendor\glm-master;$(SolutionDir)CoralEngine\vendor\stb-master\deprecated;$(SolutionDir)CoralEngine\vendor\stb-master;$(SolutionDir)CoralEngine\vendor\freetype\include;$(SolutionDir)CoralEngine\vendor\freetype\include\freetype\config;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)CoralEngine\vendor\GLFW\lib-vc2019;$(SolutionDir)CoralEngine\vendor\GLEW\lib\Release\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glfw3.lib;glew32s.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)CoralEngine\vendor\GLFW\lib-vc2019;$(SolutionDir)CoralEngine\vendor\GLEW\lib\Release\Win32;$(SolutionDir)CoralEngine\vendor\freetype;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3.lib;glew32s.lib;freetype.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -122,13 +122,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>CORAL_ENGINE_EXPORT;GLEW_STATIC;_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)CoralEngine\vendor\GLEW\include;$(SolutionDir)CoralEngine\vendor\GLFW\include\GLFW;$(SolutionDir)CoralEngine\Source;$(SolutionDir)CoralEngine\vendor\glm-master;$(SolutionDir)CoralEngine\vendor\stb-master\deprecated;$(SolutionDir)CoralEngine\vendor\stb-master;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)CoralEngine\vendor\GLEW\include;$(SolutionDir)CoralEngine\vendor\GLFW\include\GLFW;$(SolutionDir)CoralEngine\Source;$(SolutionDir)CoralEngine\vendor\glm-master;$(SolutionDir)CoralEngine\vendor\stb-master\deprecated;$(SolutionDir)CoralEngine\vendor\stb-master;$(SolutionDir)CoralEngine\vendor\freetype\include;$(SolutionDir)CoralEngine\vendor\freetype\include\freetype\config;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)CoralEngine\vendor\GLFW\lib-vc2019;$(SolutionDir)CoralEngine\vendor\GLEW\lib\Release\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glfw3.lib;glew32s.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)CoralEngine\vendor\GLFW\lib-vc2019;$(SolutionDir)CoralEngine\vendor\GLEW\lib\Release\Win32;$(SolutionDir)CoralEngine\vendor\freetype;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3.lib;glew32s.lib;freetype.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -139,15 +139,15 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>CORAL_ENGINE_EXPORT;GLEW_STATIC;_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)CoralEngine\vendor\GLEW\include;$(SolutionDir)CoralEngine\vendor\GLFW\include\GLFW;$(SolutionDir)CoralEngine\Source;$(SolutionDir)CoralEngine\vendor\glm-master;$(SolutionDir)CoralEngine\vendor\stb-master\deprecated;$(SolutionDir)CoralEngine\vendor\stb-master;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)CoralEngine\vendor\GLEW\include;$(SolutionDir)CoralEngine\vendor\GLFW\include\GLFW;$(SolutionDir)CoralEngine\Source;$(SolutionDir)CoralEngine\vendor\glm-master;$(SolutionDir)CoralEngine\vendor\stb-master\deprecated;$(SolutionDir)CoralEngine\vendor\stb-master;$(SolutionDir)CoralEngine\vendor\freetype\include;$(SolutionDir)CoralEngine\vendor\freetype\include\freetype\config;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)CoralEngine\vendor\GLFW\lib-vc2019;$(SolutionDir)CoralEngine\vendor\GLEW\lib\Release\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glfw3.lib;glew32s.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)CoralEngine\vendor\GLFW\lib-vc2019;$(SolutionDir)CoralEngine\vendor\GLEW\lib\Release\Win32;$(SolutionDir)CoralEngine\vendor\freetype;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3.lib;glew32s.lib;freetype.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -998,6 +998,7 @@
     <None Include="vendor\glm-master\glm\gtx\wrap.inl" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\Core\Font.h" />
     <ClInclude Include="Source\Core\AssetManager.h" />
     <ClInclude Include="Source\Core\Asset.h" />
     <ClInclude Include="Source\Core\IndexBufferObject.h" />
@@ -1013,6 +1014,106 @@
     <ClInclude Include="Source\Components\Sprite.h" />
     <ClInclude Include="Source\Components\Transform.h" />
     <ClInclude Include="Source\Core\Texture.h" />
+    <ClInclude Include="Text.h" />
+    <ClInclude Include="vendor\freetype\include\dlg\dlg.h" />
+    <ClInclude Include="vendor\freetype\include\dlg\output.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\config\ftconfig.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\config\ftheader.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\config\ftmodule.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\config\ftoption.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\config\ftstdlib.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\config\integer-types.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\config\mac-support.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\config\public-macros.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\freetype.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\ftadvanc.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\ftbbox.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\ftbdf.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\ftbitmap.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\ftbzip2.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\ftcache.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\ftchapters.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\ftcid.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\ftcolor.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\ftdriver.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\fterrdef.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\fterrors.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\ftfntfmt.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\ftgasp.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\ftglyph.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\ftgxval.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\ftgzip.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\ftimage.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\ftincrem.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\ftlcdfil.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\ftlist.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\ftlogging.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\ftlzw.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\ftmac.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\ftmm.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\ftmodapi.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\ftmoderr.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\ftotval.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\ftoutln.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\ftparams.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\ftpfr.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\ftrender.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\ftsizes.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\ftsnames.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\ftstroke.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\ftsynth.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\ftsystem.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\fttrigon.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\fttypes.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\ftwinfnt.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\internal\autohint.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\internal\cffotypes.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\internal\cfftypes.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\internal\compiler-macros.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\internal\ftcalc.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\internal\ftdebug.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\internal\ftdrv.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\internal\ftgloadr.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\internal\fthash.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\internal\ftmemory.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\internal\ftobjs.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\internal\ftpsprop.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\internal\ftrfork.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\internal\ftserv.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\internal\ftstream.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\internal\fttrace.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\internal\ftvalid.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\internal\psaux.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\internal\pshints.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\internal\services\svbdf.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\internal\services\svcfftl.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\internal\services\svcid.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\internal\services\svfntfmt.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\internal\services\svgldict.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\internal\services\svgxval.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\internal\services\svkern.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\internal\services\svmetric.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\internal\services\svmm.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\internal\services\svotval.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\internal\services\svpfr.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\internal\services\svpostnm.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\internal\services\svprop.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\internal\services\svpscmap.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\internal\services\svpsinfo.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\internal\services\svsfnt.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\internal\services\svttcmap.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\internal\services\svtteng.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\internal\services\svttglyf.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\internal\services\svwinfnt.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\internal\sfnt.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\internal\t1types.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\internal\tttypes.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\internal\wofftypes.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\t1tables.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\ttnameid.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\tttables.h" />
+    <ClInclude Include="vendor\freetype\include\freetype\tttags.h" />
+    <ClInclude Include="vendor\freetype\include\ft2build.h" />
     <ClInclude Include="vendor\GLEW\include\GL\eglew.h" />
     <ClInclude Include="vendor\GLEW\include\GL\glew.h" />
     <ClInclude Include="vendor\GLEW\include\GL\glxew.h" />
@@ -1309,6 +1410,7 @@
     <ClInclude Include="vendor\stb-master\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Core\Font.cpp" />
     <ClCompile Include="Source\Core\AssetManager.cpp" />
     <ClCompile Include="Source\Core\Asset.cpp" />
     <ClCompile Include="Source\Core\IndexBufferObject.cpp" />
@@ -1323,8 +1425,12 @@
     <ClCompile Include="Source\Components\Sprite.cpp" />
     <ClCompile Include="Source\Components\Transform.cpp" />
     <ClCompile Include="Source\Core\Texture.cpp" />
+    <ClCompile Include="Text.cpp" />
     <ClCompile Include="vendor\stb-master\stbi_realization.cpp" />
     <ClCompile Include="vendor\glm-master\glm\detail\glm.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="vendor\freetype\freetype.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

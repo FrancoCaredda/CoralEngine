@@ -1,6 +1,7 @@
 #include "Application.h"
 
 #include "Renderer.h"
+#include "AssetManager.h"
 
 #include <iostream>
 
@@ -35,6 +36,8 @@ bool Application::InitGL() noexcept
 	Renderer::Init();
 
 	glEnable(GL_DEPTH_TEST);
+
+	AssetManager::Init();
 
 	return true;
 }

@@ -1,0 +1,1 @@
+C:\Projects\CoralEngine\CoralEngine\vendor\ft2111\freetype-2.11.1\objs\x64\Release Static\freetype.lib

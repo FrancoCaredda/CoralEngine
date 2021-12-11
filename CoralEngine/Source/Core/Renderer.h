@@ -37,6 +37,9 @@ public:
 #endif // _DEBUG
 
 	static void SetCurrentCamera(Camera* camera) noexcept;
+
+	static void SetFontSize(const AssetHandle& font, int width, int height) noexcept;
+
 	static void DrawObject(AGameObject* object) noexcept;
 
 	static void Shutdown() noexcept;

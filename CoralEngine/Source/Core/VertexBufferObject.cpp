@@ -6,6 +6,22 @@ VertexBufferObject::VertexBufferObject(GLenum slot, GLenum usage)
 	glCreateBuffers(1, &m_BufferId);
 }
 
+void VertexBufferObject::Allocate(size_t size)
+{
+	glBufferData(m_Slot,
+		size,
+		nullptr,
+		m_Usage);
+}
+
+void VertexBufferObject::Push(void* data, size_t size, int offset)
+{
+	glBufferSubData(m_Slot, 
+		offset, 
+		size, 
+		data);
+}
+
 void VertexBufferObject::SendData(const std::vector<float>& vertexData)
 {
 	glBufferData(m_Slot,

@@ -1,6 +1,7 @@
 #include "Renderer.h"
 
 #include "Components/Transform.h"
+#include "Font.h"
 
 Renderer Renderer::s_Instance;
 
@@ -50,6 +51,12 @@ void Renderer::SetCurrentCamera(Camera* camera) noexcept
     s_Instance.m_Camera = camera;
 }
 
+void Renderer::SetFontSize(const AssetHandle& font, int width, int height) noexcept
+{
+    Font* actualFont = GetHiddenData<Font*>(font);
+    FT_Set_Pixel_Sizes(actualFont->GetFace(), width, height);
+}
+
 void Renderer::DrawObject(AGameObject* object) noexcept
 {
     if (!object->HasComponent<Sprite>())
@@ -70,7 +77,6 @@ void Renderer::DrawObject(AGameObject* object) noexcept
         sprite->m_Shader->SetUniformMatrix("u_View", s_Instance.m_Camera->GetComponent<Transform>()->GetTransform());
         sprite->m_Shader->SetUniformMatrix("u_Projection", s_Instance.m_Projection);
     }
-
 
     glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 }

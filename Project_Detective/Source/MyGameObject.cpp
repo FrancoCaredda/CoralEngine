@@ -1,21 +1,19 @@
 #include "MyGameObject.h"
 
+#include "Core/AssetManager.h"
+
 void MyGameObject::Start()
 {
 	m_Sprite = AddComponent<Sprite>();
 	m_Transform = AddComponent<Transform>();
 
-	m_Transform->Translate(glm::vec3(600 / 2 - 150, 480 / 2 - 150, 0));
-	m_Sprite->LoadTexture("Assets\\Textures\\smiling-face.png");
-	m_Sprite->SetColor(glm::vec4(1.0f, 0.0f, 0.0f, 1.0f));
-	m_Transform->Scale(glm::vec3(2, 2, 0));
-
-	m_Speed = 20;
+	//m_Sprite->SetTexture(AssetManager::GetAssetHandle("smiling-face"));
+	m_Sprite->SetColor({ 1.0, 0.0, 0.0, 1.0 });
 }
 
 void MyGameObject::Update(float deltaTime)
 {
-	m_Sprite->SetColor(glm::vec4(glm::sin(m_Speed * deltaTime), glm::cos(m_Speed * deltaTime), glm::sin(m_Speed * deltaTime), 1.0f));
+	GetComponent<Transform>()->Rotate(glm::vec3(0.0f, 0.0f, 1.0f), 2);
 }
 
 MyGameObject::~MyGameObject()

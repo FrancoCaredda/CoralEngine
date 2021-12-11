@@ -6,7 +6,7 @@ int main(void)
 	if (!Application::Init())
 		return -1;
 
-	GameWindow window("Sandbox", 600, 480, Application::GetNullMonitor());
+	GameWindow window("Sandbox", 1200, 900, Application::GetNullMonitor());
 
 	Application::SetCurrentWindow(&window);
 	Application::MakeContextCurrent();

@@ -19,11 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\MyGameObject2.cpp" />
     <ClCompile Include="Source\MyGameObject.cpp" />
     <ClCompile Include="Source\main.cpp" />
     <ClCompile Include="Source\GameWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\MyGameObject2.h" />
     <ClInclude Include="Source\MyGameObject.h" />
     <ClInclude Include="Source\GameWindow.h" />
   </ItemGroup>
@@ -101,7 +103,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)CoralEngine/Source;$(SolutionDir)CoralEngine/vendor/GLEW/include;$(SolutionDir)CoralEngine/vendor/GLFW/include/GLFW;$(SolutionDir)Project_Detective;$(SolutionDir)CoralEngine/vendor/glm-master;$(SolutionDir)CoralEngine/vendor/stb-master;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)CoralEngine/Source;$(SolutionDir)CoralEngine/vendor/GLEW/include;$(SolutionDir)CoralEngine/vendor/GLFW/include/GLFW;$(SolutionDir)Project_Detective;$(SolutionDir)CoralEngine/vendor/glm-master;$(SolutionDir)CoralEngine/vendor/stb-master;$(SolutionDir)CoralEngine\vendor\freetype\include;$(SolutionDir)CoralEngine\vendor\freetype\include\freetype\config;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -118,7 +120,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)CoralEngine/Source;$(SolutionDir)CoralEngine/vendor/GLEW/include;$(SolutionDir)CoralEngine/vendor/GLFW/include/GLFW;$(SolutionDir)Project_Detective;$(SolutionDir)CoralEngine/vendor/glm-master;$(SolutionDir)CoralEngine/vendor/stb-master;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)CoralEngine/Source;$(SolutionDir)CoralEngine/vendor/GLEW/include;$(SolutionDir)CoralEngine/vendor/GLFW/include/GLFW;$(SolutionDir)Project_Detective;$(SolutionDir)CoralEngine/vendor/glm-master;$(SolutionDir)CoralEngine/vendor/stb-master;$(SolutionDir)CoralEngine\vendor\freetype\include;$(SolutionDir)CoralEngine\vendor\freetype\include\freetype\config;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -135,7 +137,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)CoralEngine/Source;$(SolutionDir)CoralEngine/vendor/GLEW/include;$(SolutionDir)CoralEngine/vendor/GLFW/include/GLFW;$(SolutionDir)Project_Detective;$(SolutionDir)CoralEngine/vendor/glm-master;$(SolutionDir)CoralEngine/vendor/stb-master;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)CoralEngine/Source;$(SolutionDir)CoralEngine/vendor/GLEW/include;$(SolutionDir)CoralEngine/vendor/GLFW/include/GLFW;$(SolutionDir)Project_Detective;$(SolutionDir)CoralEngine/vendor/glm-master;$(SolutionDir)CoralEngine/vendor/stb-master;$(SolutionDir)CoralEngine\vendor\freetype\include;$(SolutionDir)CoralEngine\vendor\freetype\include\freetype\config;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -152,7 +154,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)CoralEngine/Source;$(SolutionDir)CoralEngine/vendor/GLEW/include;$(SolutionDir)CoralEngine/vendor/GLFW/include/GLFW;$(SolutionDir)Project_Detective;$(SolutionDir)CoralEngine/vendor/glm-master;$(SolutionDir)CoralEngine/vendor/stb-master;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)CoralEngine/Source;$(SolutionDir)CoralEngine/vendor/GLEW/include;$(SolutionDir)CoralEngine/vendor/GLFW/include/GLFW;$(SolutionDir)Project_Detective;$(SolutionDir)CoralEngine/vendor/glm-master;$(SolutionDir)CoralEngine/vendor/stb-master;$(SolutionDir)CoralEngine\vendor\freetype\include;$(SolutionDir)CoralEngine\vendor\freetype\include\freetype\config;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

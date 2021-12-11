@@ -28,10 +28,21 @@ public:
 
 	void Delete();
 
+	template<typename T>
+	friend T GetHiddenData(const AssetHandle&);
+
 	~AssetHandle();
 private:
 	IAsset* m_Asset = nullptr;
 	int m_Data = 0;
 };
+
+// T must be a pointer
+template<typename T>
+T GetHiddenData(const AssetHandle& handle)
+{
+//	return dynamic_cast<T*>(handle.m_Asset);
+	return nullptr;
+}
 
 #endif

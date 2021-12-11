@@ -18,9 +18,12 @@ public:
 	static bool Init();
 
 	static bool LoadTexture(const std::string& texture, int slot) noexcept;
+	static bool LoadFont(const std::string& font, int slot) noexcept;
 	static AssetHandle GetAssetHandle(const std::string& name) noexcept;
 
 	static void UnloadAsset(const std::string& name) noexcept;
+
+	static FT_Library GetFTLibrary() noexcept;
 
 	static void Shutdown();
 private:
@@ -29,6 +32,9 @@ private:
 private:
 	static AssetManager s_Instance;
 	bool m_Inited = false;
+
+	FT_Library m_FTLibrary;
+
 	std::unordered_map<std::string, AssetHandle> m_Table;
 };
 

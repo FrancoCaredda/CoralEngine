@@ -1,4 +1,8 @@
 .vs/
 Debug/
+Release/
+DiagnosticSession/
 CoralEngine/Debug/
 Project_Detective/Debug/
+CoralEngine/Release/
+Project_Detective/Release/

@@ -10,6 +10,8 @@
 
 #include "MyGameObject.h"
 
+#include "MyGameObject2.h"
+
 class GameWindow : public AWindow
 {
 public:
@@ -21,7 +23,8 @@ public:
 	virtual ~GameWindow() override;
 private:
 	Camera* m_Camera;
-	MyGameObject* m_Object;
+	std::vector<MyGameObject*> m_Objects;
+	MyGameObject2* m_Object;
 };
 
 #endif // !GAME_WINDOW_H
