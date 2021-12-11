@@ -6,6 +6,7 @@
 #include <string>
 #include <typeinfo>
 #include <unordered_map>
+class Transform;
 
 class CORAL_API AGameObject
 {
@@ -14,6 +15,9 @@ public:
 
 	virtual void Start() = 0;
 	virtual void Update(float deltaTime) = 0;
+
+	Transform* GetTransform() const;
+	std::string GetName() const;
 
 	template<typename T>
 	T* AddComponent();
@@ -28,6 +32,7 @@ public:
 private:
 	std::string m_Name;
 	std::unordered_map<std::string, void*> m_Components;
+	Transform* m_Transform;
 };
 
 template<typename T>

@@ -76,7 +76,8 @@ void Application::RunLoop() noexcept
 		Renderer::Clear();
 
 		deltaTime = glfwGetTime() - previousTime;
-		previousTime = deltaTime;
+		previousTime += deltaTime;
+		//previousTime = deltaTime;
 
 		s_Application.m_Window->Update(deltaTime);
 

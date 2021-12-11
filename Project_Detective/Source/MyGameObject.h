@@ -19,7 +19,6 @@ public:
 	virtual ~MyGameObject() override;
 private:
 	ShaderProgram* m_Program;
-	Transform* m_Transform;
-	float m_Speed = 0.05;
+	//Transform* m_Transform;
 };
 

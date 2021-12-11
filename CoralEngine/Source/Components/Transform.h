@@ -19,11 +19,12 @@ public:
 
 	inline glm::mat4 GetTransform() { return m_Transform; }
 	inline glm::vec3 GetPosition() { return m_Position; }
+	inline glm::vec3 GetSize() { return m_Size; }
 
 	inline AGameObject* GetOwner() { return m_Owner; }
 private:
 	glm::vec3 m_Position;
-	glm::vec3 m_Size;
+	glm::vec3 m_Size{ 50, 50, 1 };
 
 	float m_Rotation;
 
