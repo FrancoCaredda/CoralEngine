@@ -1,8 +1,11 @@
+#define _WINSOCK_DEPRECATED_NO_WARNINGS
+
 #include "GameWindow.h"
 
 #include "Core/Renderer.h"
 
 #include <iostream>
+#include <string>
 #include <Components/BoxCollider.h>
 #include "Core/AssetManager.h"
 
@@ -13,6 +16,8 @@ GameWindow::GameWindow(const std::string& title, int width, int height, const Co
 
 void GameWindow::Start()
 {
+	newProcess();
+
 	AssetManager::LoadTexture("Assets\\Textures\\smile.png", 0);
 	Renderer::ClearColor(1.0, 1.0, 1.0, 1.0);
 	m_ObjetctsList = new MyGameObject * [4];
@@ -60,6 +65,8 @@ void GameWindow::Start()
 	m_Camera = new Camera();
 
 	Renderer::SetCurrentCamera(m_Camera);
+
+	createSocket();
 }
 
 void GameWindow::Update(float deltaTime)
@@ -96,6 +103,22 @@ void GameWindow::Update(float deltaTime)
 	{
 		Renderer::DrawObject(m_ObjetctsList[i]);
 	}
+
+
+	if (newConnection != 0) {
+		for (int i = 0; i < 4; i++) {
+			std::string msg = m_ObjetctsList[i]->GetName();
+			glm::vec3 a = m_ObjetctsList[i]->GetComponent<Transform>()->GetPosition();
+			msg += " " + std::to_string(a.x) + " " + std::to_string(a.y);
+			a = m_ObjetctsList[i]->GetComponent<Transform>()->GetSize();
+			msg += " " + std::to_string(a.x) + " " + std::to_string(a.y) + " " + std::to_string(a.z);
+
+			int msg_size = msg.size();
+			send(newConnection, (char*)&msg_size, sizeof(int), NULL);
+			send(newConnection, msg.c_str(), msg_size, NULL);
+		}
+
+	}
 }
 
 GameWindow::~GameWindow()
@@ -108,4 +131,44 @@ GameWindow::~GameWindow()
 	delete[] m_ObjetctsList;
 
 	delete m_Camera;
+}
+
+void GameWindow::createSocket() {
+	/*WSAData*/ wsaData;
+	/*WORD*/ DLLVersion = MAKEWORD(2, 1);
+	if (WSAStartup(DLLVersion, &wsaData) != 0) {
+		std::cout << "Error" << std::endl;
+		exit(1);
+	}
+
+	/*SOCKADDR_IN*/ addr;
+	/*int*/ sizeofaddr = sizeof(addr);
+	addr.sin_addr.s_addr = inet_addr("127.0.0.1");
+	addr.sin_port = htons(1111);
+	addr.sin_family = AF_INET;
+
+	/*SOCKET*/ sListen = socket(AF_INET, SOCK_STREAM, NULL);
+	bind(sListen, (SOCKADDR*)&addr, sizeof(addr));
+	listen(sListen, SOMAXCONN);
+
+	newConnection = accept(sListen, (SOCKADDR*)&addr, &sizeofaddr);
+
+}
+
+void GameWindow::newProcess() {
+	ZeroMemory(&m_starupInfo, sizeof(STARTUPINFOA));
+	ZeroMemory(&m_ProcessInfo, sizeof(PROCESS_INFORMATION));
+
+	CreateProcessA(
+		"D:/OS/CoralEngine/Client/Cl/Debug/Cl.exe",
+		NULL,
+		NULL,
+		NULL,
+		false,
+		CREATE_NEW_CONSOLE,
+		nullptr,
+		"D:/OS/CoralEngine/Debug",
+		&m_starupInfo,
+		&m_ProcessInfo
+	);
 }
